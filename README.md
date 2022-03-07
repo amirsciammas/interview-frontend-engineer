@@ -9,7 +9,7 @@ You will use JSONPlaceholder. JSONPlaceholder is a public API which will act as 
 The app should display 2 resources from the API: Users and Posts. 
 You should create an app that enable browsing of users and thier posts. 
 
-**You can design it in any way you like, but keep in mind that this is NOT a design task** 
+**You can design it in any way you like, but keep in mind that this is NOT a design task, so keep the UI simple and invest the time in building it properly.** 
 
 -----
 
