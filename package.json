@@ -1,0 +1,54 @@
+{
+  "name": "interview-frontend-engineer",
+  "version": "1.0.0",
+  "description": "### **High level spec**",
+  "main": "index.js",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn parcel public/index.html",
+    "build": "yarn parcel build public/index.html",
+    "lint:code": "eslint --ext ts,tsx src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirsciammas/interview-frontend-engineer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirsciammas/interview-frontend-engineer/issues"
+  },
+  "homepage": "https://github.com/amirsciammas/interview-frontend-engineer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@parcel/transformer-typescript-tsc": "^2.3.2",
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "parcel": "^2.3.2",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.17.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "eslint-config-airbnb-typescript": "^16.1.1",
+    "mobx": "^6.4.2",
+    "mobx-react-lite": "^3.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2"
+  }
+}
