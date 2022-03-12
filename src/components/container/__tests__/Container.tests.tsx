@@ -12,7 +12,7 @@ const usersResponse = rest.get(`${BASE_URL + UserPostsEndpoints.USERS}`, (req, r
 
 const postResponse = rest.get(`${BASE_URL + UserPostsEndpoints.POSTS}`, (req, res, ctx) => {
   return res(
-    ctx.json([{id: 1, userId: 1, body: 'mock body'}])
+    ctx.json([{id: 1, userId: 1, body: 'mock body', title: 'mock title'}])
   );
 });
 
@@ -39,7 +39,9 @@ test('it should display dropdown users', async() => {
 test('it should display post body', async() => {
   render(<Container/>);
   const postBody = await screen.findByText('mock body');
-  expect(postBody).toBeTruthy();
+  await waitFor(() => {
+    expect(postBody).toBeTruthy();
+  })
 });
 
 test('it should display no users message when error on request', async() => {

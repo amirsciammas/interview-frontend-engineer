@@ -3,6 +3,7 @@ import { SelectChangeEvent } from '@mui/material/Select';
 import { getUsers, getPostsByUserId } from "../../utils/api";
 import { User, Post } from "../../utils/api.types";
 import Users from "../users";
+import PostCard from "../postCard";
 
 const Container: FunctionComponent = () => {
   const [users, setusers] = useState([] as User[]);
@@ -22,7 +23,7 @@ const Container: FunctionComponent = () => {
   };
 
   const userPostsItems = userPosts.length ? userPosts.map((post => {
-      return <p key={post.id}> {post.body} </p>
+      return <PostCard key={post.id} post={post}/>
     })) : <p>No Posts</p>
   
 
