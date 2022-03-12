@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card component renders correctly 1`] = `
+<div
+  style={Object {}}
+>
+  Hello!
+</div>
+`;
