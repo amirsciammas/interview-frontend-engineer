@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import background from "./assets/background1.jpg";
 import PostPage from "./components/PostPage/PostPage";
 import UsersPage from "./components/UserPage/UsersPage";
