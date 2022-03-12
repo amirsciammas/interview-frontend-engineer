@@ -1,24 +1,33 @@
 # Adidas Interview Front-end Engineer
 
-## Available Scripts
+## Dependencies
 
-In the project directory, you can run:
+This app was created using the latest version of `create-react-app`, which is `v5.0.0`
+For creating it it requires `node version 14` or bigger.
 
-### `npm start`
+I reccomend updating `node` directly from their site (I have had issues doing it using a package manager as `brew`).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I used `typescript` for writing the code.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It also requires `Material UI - MUI` for the UI and `axios` for sending the requests.
 
-### `npm test`
+## How to run the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm i
+npm start
+```
 
-## Getting Started with Create React App
+## How to run the tests
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+npm run test
+```
 
+## Comments
 
+- I decided to start the project using the `create-react-app` because it makes it much easier and less time consuming, it also adds most of the dependencies that I need to develop an app.
+- I decided to use `axios` as it is the http client I have more experience working on, so it would be less time consuming.
+- I decided to include MUI as this UI library is very easy to use, so no much time was used using their components.
+- For testing I added the `msw` library because it makes it easier to test API requests and it actually makes them in a more real user experience way.
+- I did not create tests for all the components and/or all possible scenarios because it requires a lot of time. For me, creating testing is what the most time consumes, but it is not a blocker for delivering my work.
