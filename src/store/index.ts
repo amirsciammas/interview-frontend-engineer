@@ -1,9 +1,8 @@
 import {
   makeObservable, observable, action, computed,
 } from 'mobx';
-import API from '../consts';
-import { User, Post } from '../types/api';
-
+import { User, Post } from 'src/types/api';
+import { fetchUser, fetchUsers, fetchUserPosts } from 'src/api';
 export class Store {
   constructor() {
     makeObservable(this);
@@ -27,13 +26,8 @@ export class Store {
   async getUsers() {
     try {
       this.isLoading = true;
-      const response = await fetch(`${API}/users`);
-      if (response.ok) {
-        const data = await response.json();
-        this.setUsers(data);
-      } else {
-        throw new Error('unable to load users');
-      }
+      const users = await fetchUsers();
+      this.setUsers(users);
     } catch (e) {
       console.error(e);
       this.isError = true;
@@ -45,13 +39,8 @@ export class Store {
   async getUserPosts(userId: string) {
     try {
       this.isLoading = true;
-      const response = await fetch(`${API}/users/${userId}/posts`);
-      if (response.ok) {
-        const data = await response.json();
-        this.setPosts(data);
-      } else {
-        throw new Error('unable to load posts');
-      }
+      const posts = await fetchUserPosts(userId);
+      this.setPosts(posts);
     } catch (e) {
       console.error(e);
       this.isError = true;
@@ -63,13 +52,8 @@ export class Store {
   async getUser(userId: string) {
     try {
       this.isLoading = true;
-      const response = await fetch(`${API}/users/${userId}`);
-      if (response.ok) {
-        const data = await response.json();
-        this.setUser(data);
-      } else {
-        throw new Error('unable to load selected user');
-      }
+      const user = await fetchUser(userId);
+      this.setUser(user);
     } catch (e) {
       console.error(e);
       this.isError = true;
