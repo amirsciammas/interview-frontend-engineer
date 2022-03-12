@@ -1,28 +1,28 @@
 # Frontend Engineer Interview Project
 
-### **High level spec**
+## Nikita Melnikov
 
-Your task is to build a Single Page Application in React that displays data from a public API.
+### dependencies
+- node v16.x.x (for lastest parcel version; easiest way to manage node versions - nvm or n)
+- typescript
+- yarn (optional)
 
-You will use JSONPlaceholder. JSONPlaceholder is a public API which will act as you backend server. You can find all the information about the API over here --> http://jsonplaceholder.typicode.com/
+### how to run, test and build
 
-The app should display 2 resources from the API: Users and Posts. 
-You should create an app that enable browsing of users and thier posts. 
+- if yarn
+```
+yarn
+yarn start
+```
 
-**You can design it in any way you like, but keep in mind that this is NOT a design task, so keep the UI simple and invest the time in building it properly.** 
+- if npm
+```
+npm i
+npm start
+```
 
------
+- For tests and build you can use ```test``` or ```build``` commands, they should run without any additional setup after installing all dependencies
 
-### **How to share your results?**
-- [ ] Clone this repository and create your own branch to work on.
-- [ ] .... develop .....
-- [ ] Once you are ready, create a pull request with your code. 
+### additional info
 
-
-### **Evaluation:**
-- [ ] There should be **at least** 1 test written and the README file should include instructions on how to execute it.
-- [ ] The React app should build without errors (typically using `npm run build`). If there are necessary steps required to get it to compile, those should be covered in README.md.
-- [ ] No crashes or bugs.
-- [ ] Code is easily understood and communicative (eg. comments, variable names, etc). 
-- [ ] Everything that you decide to not do due to the limitation of time should be documented in the README.
-- [ ] GitHub commit history is consistent, easy to follow and understand. 
+Only few components and store have some test coverage due to simplicity of the task itself. Entire project is done on typescript and being built with parcel (as its a very fast and easy to set up but still highly configurable alternative to webpack). All css modules have type declarations built automatically for easier development.
