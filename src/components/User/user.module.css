@@ -1,0 +1,18 @@
+.cardContent {
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.contacts {
+  margin: 4px 0 0;
+  border-radius: 12px;
+}
+
+.contact {
+  display: flex;
+}
+
+.link {
+  align-self: flex-end;
+}
