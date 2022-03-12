@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import React, { FC, useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { User } from "../../interfaces/UserType";
 import UsersService from "../../services/UsersService";
 import UserItem from "../UserItem/UserItem";
@@ -11,13 +11,16 @@ interface UsersPageProps {}
 const UsersPage: FC<UsersPageProps> = () => {
   const [users, setUsers] = useState<User[] | null>(null);
 
-  async function fetchUsers() {
-    const users = await UsersService.getUsers();
-    setUsers(users);
-  }
-
   useEffect(() => {
-    fetchUsers();
+    let isMounted = true;
+    UsersService.getUsers().then((users) => {
+      if (isMounted) {
+        setUsers(users);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
   });
 
   if (!users) {
@@ -29,11 +32,11 @@ const UsersPage: FC<UsersPageProps> = () => {
       <h1 className={styles.title}>List of users</h1>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         {users.map((user) => (
-          <Grid item xs={11} md={5} key={user.id} >
+          <Grid item xs={11} md={5} key={user.id}>
             <Link to={`/users/${user.id}`}>
               <UserItem user={user} />
             </Link>
-            </Grid>
+          </Grid>
         ))}
       </Grid>
     </div>

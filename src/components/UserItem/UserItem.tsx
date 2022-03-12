@@ -8,7 +8,7 @@ interface UserItemProps {
 }
 
 const UserItem: FC<UserItemProps> = ({ user }) => (
-  <div className={styles.UserItem} data-testid="UserItem">
+  <div className={styles.userItem} data-testid="UserItem">
     <Grid container>
       <Grid item xs={6} className={styles.name}>
         <div>{user.name}</div>
