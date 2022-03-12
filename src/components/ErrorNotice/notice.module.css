@@ -1,0 +1,22 @@
+.notice {
+  transition: 0.4s;
+  width: 125px;
+  border-radius: 8px;
+  background: #e8dff5;
+  padding: 8px;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+.noticeHidden {
+  display: none;
+}
+
+.reload {
+  color: blue;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}

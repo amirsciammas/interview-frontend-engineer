@@ -11,31 +11,41 @@ function Posts() {
   const { id } = useParams();
 
   useEffect(() => {
+    store.setUser(undefined);
+    store.setPosts([]);
+
     if (id) {
       store.getUser(id);
       store.getUserPosts(id);
     }
   }, [id]);
+
   return (
     <div className={mainPageClasses.container}>
       <Link to="/">
         <FiArrowLeft />
         Go back
       </Link>
-      {store.user && (
-        <div className={classes.userName}>
-          {store.user.username}
-          {'\'s '}
-          posts
-          {' '}
-          {`(${store.postsCount})`}
-        </div>
+      {store.isLoading ? (
+        <div className={mainPageClasses.loading}>Loading posts...</div>
+      ) : (
+        <>
+          {store.user && (
+            <div className={classes.userName}>
+              {store.user.username}
+              {'\'s '}
+              posts
+              {' '}
+              {`(${store.postsCount})`}
+            </div>
+          )}
+          {store.posts.map((post) => (
+            <React.Fragment key={post.id}>
+              <UserPost post={post} />
+            </React.Fragment>
+          ))}
+        </>
       )}
-      {store.posts.map((post) => (
-        <React.Fragment key={post.id}>
-          <UserPost post={post} />
-        </React.Fragment>
-      ))}
     </div>
   );
 }

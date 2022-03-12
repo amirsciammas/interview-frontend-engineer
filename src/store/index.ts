@@ -17,6 +17,8 @@ export class Store {
 
   @observable isLoading = false;
 
+  @observable isError = false;
+
   @computed
   get postsCount() {
     return this.posts.length;
@@ -34,6 +36,7 @@ export class Store {
       }
     } catch (e) {
       console.error(e);
+      this.isError = true;
     } finally {
       this.isLoading = false;
     }
@@ -51,6 +54,7 @@ export class Store {
       }
     } catch (e) {
       console.error(e);
+      this.isError = true;
     } finally {
       this.isLoading = false;
     }
@@ -68,6 +72,7 @@ export class Store {
       }
     } catch (e) {
       console.error(e);
+      this.isError = true;
     } finally {
       this.isLoading = false;
     }
@@ -84,7 +89,7 @@ export class Store {
   }
 
   @action
-  setUser(user: User) {
+  setUser(user?: User) {
     this.user = user;
   }
 }

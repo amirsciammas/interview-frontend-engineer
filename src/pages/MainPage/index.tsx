@@ -7,11 +7,15 @@ import * as classes from './main.module.css';
 function MainPage() {
   return (
     <div className={classes.container}>
-      {store.users.map((user) => (
-        <React.Fragment key={user.id}>
-          <UserComponent user={user} />
-        </React.Fragment>
-      ))}
+      {store.isLoading ? (
+        <div className={classes.loading}>Loading users...</div>
+      ) : (
+        store.users.map((user) => (
+          <React.Fragment key={user.id}>
+            <UserComponent user={user} />
+          </React.Fragment>
+        ))
+      )}
     </div>
   );
 }

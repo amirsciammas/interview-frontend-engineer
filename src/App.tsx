@@ -4,17 +4,21 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 import store from 'src/store';
 import MainPage from 'src/pages/MainPage';
 import Posts from 'src/pages/Posts';
+import ErrorNotice from 'src/components/ErrorNotice';
 import * as classes from './app.module.css';
 
 function App() {
   useEffect(() => {
     store.getUsers();
   }, []);
+
   return (
     <div className={classes.page}>
+      <ErrorNotice isVisible={store.isError} />
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -25,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default observer(App);
