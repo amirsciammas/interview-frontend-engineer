@@ -4,6 +4,7 @@ import UsersService from "../../services/UsersService";
 import { User } from "../../interfaces/UserType";
 import UserItem from "../UserItem/UserItem";
 import Grid from "@mui/material/Grid";
+import { Link } from 'react-router-dom';
 
 interface UsersPageProps {}
 
@@ -29,8 +30,10 @@ const UsersPage: FC<UsersPageProps> = () => {
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         {users.map((user) => (
           <Grid item xs={11} md={5}>
-            <UserItem user={user} key={user.id} />
-          </Grid>
+            <Link to={`/users/${user.id}`}>
+              <UserItem user={user} key={user.id} />
+            </Link>
+            </Grid>
         ))}
       </Grid>
     </div>

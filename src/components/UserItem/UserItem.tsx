@@ -9,11 +9,16 @@ interface UserItemProps {
 
 const UserItem: FC<UserItemProps> = ({ user }) => (
   <div className={styles.UserItem} data-testid="UserItem">
-    <div className={styles.name}>{user.name}</div>
-    <div>"{user.username}"</div>
-
-    <div>{user.email}</div>
-    <div>{user.website}</div>
+    <Grid container>
+      <Grid item xs={6} className={styles.name}>
+        <div>{user.name}</div>
+        <div>"{user.username}"</div>
+      </Grid>
+      <Grid item xs={6}>
+        <div>{user.email}</div>
+        <div>{user.website}</div>
+      </Grid>
+    </Grid>
   </div>
 );
 
