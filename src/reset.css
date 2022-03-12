@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+}
+p {
+  margin: 4px 0;
+}
+
+svg {
+  vertical-align: bottom;
+  margin-right: 8px;
+}
