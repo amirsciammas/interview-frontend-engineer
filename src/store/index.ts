@@ -1,10 +1,10 @@
 import {
-  makeObservable, observable, action,
+  makeObservable, observable, action, computed,
 } from 'mobx';
 import API from '../consts';
 import { User, Post } from '../types/api';
 
-class Store {
+export class Store {
   constructor() {
     makeObservable(this);
   }
@@ -15,49 +15,77 @@ class Store {
 
   @observable user?: User = undefined;
 
-  @action
+  @observable isLoading = false;
+
+  @computed
+  get postsCount() {
+    return this.posts.length;
+  }
+
   async getUsers() {
     try {
+      this.isLoading = true;
       const response = await fetch(`${API}/users`);
       if (response.ok) {
         const data = await response.json();
-        this.users = data;
+        this.setUsers(data);
       } else {
         throw new Error('unable to load users');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      this.isLoading = false;
     }
   }
 
-  @action
   async getUserPosts(userId: string) {
     try {
+      this.isLoading = true;
       const response = await fetch(`${API}/users/${userId}/posts`);
       if (response.ok) {
         const data = await response.json();
-        this.posts = data;
+        this.setPosts(data);
       } else {
         throw new Error('unable to load posts');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      this.isLoading = false;
     }
   }
 
-  @action
   async getUser(userId: string) {
     try {
+      this.isLoading = true;
       const response = await fetch(`${API}/users/${userId}`);
       if (response.ok) {
         const data = await response.json();
-        this.user = data;
+        this.setUser(data);
       } else {
         throw new Error('unable to load selected user');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      this.isLoading = false;
     }
+  }
+
+  @action
+  setPosts(posts: Post[]) {
+    this.posts = posts;
+  }
+
+  @action
+  setUsers(users: User[]) {
+    this.users = users;
+  }
+
+  @action
+  setUser(user: User) {
+    this.user = user;
   }
 }
 
