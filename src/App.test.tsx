@@ -1,9 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+
+import { screen, render, waitFor} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+  test('it should display the app waiting for loading the users', async() => {
+      render(<App/>);
+      const welcome = await screen.findByText('Welcome to My Interview for Frontend Engineer');
+      expect(welcome).toBeTruthy();
+      await waitFor(() => {
+        expect(screen.queryByText("No users")).not.toBeInTheDocument();
+      })
+    });
