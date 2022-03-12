@@ -39,9 +39,7 @@ test('it should display dropdown users', async() => {
 test('it should display post body', async() => {
   render(<Container/>);
   const postBody = await screen.findByText('mock body');
-  await waitFor(() => {
     expect(postBody).toBeTruthy();
-  })
 });
 
 test('it should display no users message when error on request', async() => {
