@@ -1,17 +1,11 @@
-import loadingSpinner from "../../assets/loading.json";
-import { useLottie } from "lottie-react";
-
+import styles from "./LoadingSpinner.module.scss";
 
 const LoadingSpinner = () => {
-  const options = {
-    animationData: loadingSpinner,
-    loop: true,
-    autoplay: true,
-  };
-
-  const { View } = useLottie(options);
-
-  return View;
+  return (
+    <div className={styles.wrapper} data-testid="LoadingSpinner">
+      <div className={styles.loader}></div>
+    </div>
+  );
 };
 
 export default LoadingSpinner;
