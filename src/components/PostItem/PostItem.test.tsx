@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import PostItem from "./PostItem";
+import renderer from "react-test-renderer";
 
 const post = {
   userId: 0,
@@ -25,5 +26,10 @@ describe("<PostItem />", () => {
 
     const postItemBody = screen.getByTestId("PostItem.body");
     expect(postItemBody.textContent).toBe(post.body);
+  });
+
+  it("renders correctly", () => {
+    const tree = renderer.create(<PostItem post={post} />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

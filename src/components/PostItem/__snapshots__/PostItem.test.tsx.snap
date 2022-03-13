@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostItem /> renders correctly 1`] = `
+<div
+  className="postItem"
+  data-testid="PostItem"
+>
+  <h4
+    className="title"
+    data-testid="PostItem.title"
+  >
+    
+  </h4>
+  <div
+    data-testid="PostItem.body"
+  >
+    
+  </div>
+</div>
+`;

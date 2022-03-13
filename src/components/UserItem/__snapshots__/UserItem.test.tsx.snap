@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserItem /> renders correctly 1`] = `
+<div
+  className="userItem"
+  data-testid="UserItem"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 name css-1osj8n2-MuiGrid-root"
+    >
+      <div
+        data-testid="UserItem.name"
+      >
+        John
+      </div>
+      <div
+        data-testid="UserItem.username"
+      >
+        "
+        JDoe
+        "
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+    >
+      <div
+        data-testid="UserItem.email"
+      >
+        john.doe@gmail.com
+      </div>
+      <div
+        data-testid="UserItem.website"
+      >
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;

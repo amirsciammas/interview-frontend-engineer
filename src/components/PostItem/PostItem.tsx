@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Post } from "../../interfaces/PostType";
 import styles from "./PostItem.module.scss";
-import Grid from "@mui/material/Grid";
 
 interface PostItemProps {
   post: Post;

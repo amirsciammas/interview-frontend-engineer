@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import UserItem from "./UserItem";
+import renderer from 'react-test-renderer';
 
 const user = {
   id: 0,
@@ -46,5 +47,12 @@ describe("<UserItem />", () => {
 
     const userItemWebsite = screen.getByTestId("UserItem.website");
     expect(userItemWebsite.textContent).toBe(user.website);
+  });
+
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<UserItem user={user} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
