@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { User } from "../../interfaces/UserType";
 import UsersService from "../../services/UsersService";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import UserItem from "../UserItem/UserItem";
 import styles from "./UsersPage.module.scss";
 
@@ -24,7 +25,7 @@ const UsersPage: FC<UsersPageProps> = () => {
   });
 
   if (!users) {
-    return <span>"loading..."</span>;
+    return <LoadingSpinner />;
   }
 
   return (

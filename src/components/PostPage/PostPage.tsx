@@ -5,6 +5,7 @@ import { Post } from "../../interfaces/PostType";
 import { User } from "../../interfaces/UserType";
 import PostsService from "../../services/PostsService";
 import UsersService from "../../services/UsersService";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import PostItem from "../PostItem/PostItem";
 import styles from "./PostPage.module.scss";
 
@@ -37,7 +38,7 @@ const PostPage: FC<PostPageProps> = () => {
   });
 
   if (!posts || !user) {
-    return <span>"loading..."</span>;
+    return <LoadingSpinner/>
   }
 
   return (

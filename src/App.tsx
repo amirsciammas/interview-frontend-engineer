@@ -8,9 +8,10 @@ function App() {
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
       <Routes>
-        <Route path="users" element={<UsersPage />} />
         <Route path="/" element={<UsersPage />} />
+        <Route path="users" element={<UsersPage />} />
         <Route path="users/:id" element={<PostPage />} />
+        <Route path="*" element={<UsersPage/>}/>
       </Routes>
     </div>
   );
