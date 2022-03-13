@@ -1,6 +1,7 @@
+import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import React, { FC, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Post } from "../../interfaces/PostType";
 import { User } from "../../interfaces/UserType";
 import PostsService from "../../services/PostsService";
@@ -14,6 +15,7 @@ interface PostPageProps {}
 const PostPage: FC<PostPageProps> = () => {
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [user, setUser] = useState<User | null>(null);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -38,7 +40,7 @@ const PostPage: FC<PostPageProps> = () => {
   });
 
   if (!posts || !user) {
-    return <LoadingSpinner/>
+    return <LoadingSpinner />;
   }
 
   return (
@@ -47,6 +49,13 @@ const PostPage: FC<PostPageProps> = () => {
         <h1>{user.name}</h1>
         <h2 className={styles.username}>"{user.username}"</h2>
       </div>
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid item xs={8} className={styles.backButton}>
+          <Button variant="contained" onClick={() => navigate("/")}>
+            Back
+          </Button>
+        </Grid>
+      </Grid>
       <Grid
         container
         spacing={2}

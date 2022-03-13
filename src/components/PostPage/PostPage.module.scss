@@ -1,12 +1,17 @@
 .posts {
   overflow: scroll;
   height: 70vh;
+  margin-top: 10px !important;
 }
 
 .titleWrapper {
-  padding: 5vh;
+  padding: 3vh;
 }
 
-.username{
-	color: #fff;
+.username {
+  color: #fff;
+}
+
+.backButton {
+  text-align: left;
 }

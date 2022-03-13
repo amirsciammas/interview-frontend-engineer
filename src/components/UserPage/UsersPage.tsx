@@ -31,7 +31,7 @@ const UsersPage: FC<UsersPageProps> = () => {
   return (
     <div className={styles.UsersPage} data-testid="UsersPage">
       <h1 className={styles.title}>List of users</h1>
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
+      <Grid container spacing={4} alignItems="center" justifyContent="center">
         {users.map((user) => (
           <Grid item xs={11} md={5} key={user.id}>
             <Link to={`/users/${user.id}`}>
