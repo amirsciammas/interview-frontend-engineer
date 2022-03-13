@@ -9,8 +9,10 @@ interface PostItemProps {
 
 const PostItem: FC<PostItemProps> = ({ post }) => (
   <div className={styles.postItem} data-testid="PostItem">
-    <h4 className={styles.title}>{post.title}</h4>
-    <div>{post.body}</div>
+    <h4 className={styles.title} data-testid="PostItem.title">
+      {post.title}
+    </h4>
+    <div data-testid="PostItem.body">{post.body}</div>
   </div>
 );
 

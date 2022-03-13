@@ -39,38 +39,39 @@ const PostPage: FC<PostPageProps> = () => {
     };
   });
 
-  if (!posts || !user) {
-    return <LoadingSpinner />;
-  }
-
-  return (
-    <div data-testid="PostPage">
-      <div className={styles.titleWrapper}>
-        <h1>{user.name}</h1>
-        <h2 className={styles.username}>"{user.username}"</h2>
-      </div>
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
-        <Grid item xs={8} className={styles.backButton}>
-          <Button variant="contained" onClick={() => navigate("/")}>
-            Back
-          </Button>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        spacing={2}
-        alignItems="center"
-        justifyContent="center"
-        className={styles.posts}
-      >
-        {posts.map((post) => (
-          <Grid item xs={8} key={post.id}>
-            <PostItem post={post} key={post.id} />
+  const content =
+    !posts || !user ? (
+      <LoadingSpinner />
+    ) : (
+      <>
+        <div className={styles.titleWrapper}>
+          <h1>{user.name}</h1>
+          <h2 className={styles.username}>"{user.username}"</h2>
+        </div>
+        <Grid container spacing={2} alignItems="center" justifyContent="center">
+          <Grid item xs={8} className={styles.backButton}>
+            <Button variant="contained" onClick={() => navigate("/")}>
+              Back
+            </Button>
           </Grid>
-        ))}
-      </Grid>
-    </div>
-  );
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          alignItems="center"
+          justifyContent="center"
+          className={styles.posts}
+        >
+          {posts.map((post) => (
+            <Grid item xs={8} key={post.id}>
+              <PostItem post={post} key={post.id} />
+            </Grid>
+          ))}
+        </Grid>
+      </>
+    );
+
+  return <div data-testid="PostPage">{content}</div>;
 };
 
 export default PostPage;

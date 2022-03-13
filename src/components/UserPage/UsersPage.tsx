@@ -24,12 +24,10 @@ const UsersPage: FC<UsersPageProps> = () => {
     };
   });
 
-  if (!users) {
-    return <LoadingSpinner />;
-  }
-
-  return (
-    <div className={styles.UsersPage} data-testid="UsersPage">
+  const content = !users ? (
+    <LoadingSpinner data-testid="LoadingSpinner" />
+  ) : (
+    <>
       <h1 className={styles.title}>List of users</h1>
       <Grid container spacing={4} alignItems="center" justifyContent="center">
         {users.map((user) => (
@@ -40,6 +38,12 @@ const UsersPage: FC<UsersPageProps> = () => {
           </Grid>
         ))}
       </Grid>
+    </>
+  );
+
+  return (
+    <div className={styles.UsersPage} data-testid="UsersPage">
+      {content}
     </div>
   );
 };

@@ -11,12 +11,12 @@ const UserItem: FC<UserItemProps> = ({ user }) => (
   <div className={styles.userItem} data-testid="UserItem">
     <Grid container>
       <Grid item xs={6} className={styles.name}>
-        <div>{user.name}</div>
-        <div>"{user.username}"</div>
+        <div data-testid="UserItem.name">{user.name}</div>
+        <div data-testid="UserItem.username">"{user.username}"</div>
       </Grid>
       <Grid item xs={6}>
-        <div>{user.email}</div>
-        <div>{user.website}</div>
+        <div data-testid="UserItem.email">{user.email}</div>
+        <div data-testid="UserItem.website">{user.website}</div>
       </Grid>
     </Grid>
   </div>
