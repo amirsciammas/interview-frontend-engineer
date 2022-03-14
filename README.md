@@ -14,3 +14,6 @@ To run the tests, use the follwoing command:
 ### `npm test`
 
 This launches the test runner in the interactive watch mode.
+
+## Additional Info
+As I ran out of time, I have added tests and snapshot tests only for the UserItem and the PostItem Components. With more time, I would have added tests for all components and services, as well as improved the styling and responsiveness.
