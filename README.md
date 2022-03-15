@@ -14,9 +14,9 @@ You should create an app that enable browsing of users and thier posts.
 -----
 
 ### **How to share your results?**
-- [ ] Fork this repository to your own account
+- [ ] Clone this repository and create your own branch to work on.
 - [ ] .... develop .....
-- [ ] Once you are ready, share your public forked repository with us.
+- [ ] Once you are ready, create a pull request with your code.
 
 
 ### **Evaluation:**
