@@ -30,18 +30,18 @@ const UserPage = (): React.ReactElement => {
     )
   } else {
     return (
-      <>      
-        <div>
+      <div className='TableContainer'>     
+        <div className='Search'>
           <h2>Search By User Name: </h2>
           <input
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            placeholder="Enter the user name"
+            placeholder="Enter the User name"
           />
         </div>
         <UserList users={filteredUser}></UserList>
-      </>
+      </div>
     )
   }
 }
