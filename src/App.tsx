@@ -1,18 +1,26 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import SiteLayout from './layouts/SiteLayout';
 import routes from './routes';
+
+const queryClient = new QueryClient();
 
 const App = (): React.ReactElement => {
   return (
-    <Router>        
-      <Switch>
-        {routes.map((route) => (
-          <Route                        
-            {...route}
-          />
-        ))}
-      </Switch>       
+    <Router>   
+       <QueryClientProvider client={queryClient}>
+        <SiteLayout>   
+          <Switch>
+            {routes.map((route) => (
+              <Route                        
+                {...route}
+              />
+            ))}
+          </Switch>   
+        </SiteLayout>
+      </QueryClientProvider>    
     </Router>
   );
 }
