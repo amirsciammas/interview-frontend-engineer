@@ -1,6 +1,7 @@
 import UserPage from './components/User';
 import PostPage from './components/Post';
 import NotFound from './components/NotFound';
+import UserByPost from './components/User/UserByPost';
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/posts',
     component: PostPage,
     exact: true,    
+  },
+  {
+    path: '/users/:id/posts',
+    component: UserByPost,
+    exact: true,
   },
   {
     path: '*',
