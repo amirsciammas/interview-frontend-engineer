@@ -13,8 +13,8 @@ const App = (): React.ReactElement => {
        <QueryClientProvider client={queryClient}>
         <SiteLayout>   
           <Switch>
-            {routes.map((route) => (
-              <Route                        
+            {routes.map((route, i) => (
+              <Route key={i}                      
                 {...route}
               />
             ))}
