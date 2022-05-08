@@ -10,14 +10,25 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x, 14.x]
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
     - run: npm ci
+
     - run: npm run build --if-present
+
     - run: npm test
+
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build & Push Docker Image
+      run: make tag=${GITHUB_SHA::8} docker_user=${{ secrets.DOCKER_USER }} push
+  
