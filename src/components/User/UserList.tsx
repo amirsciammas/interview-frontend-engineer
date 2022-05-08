@@ -22,8 +22,9 @@ const UserList = ({users}: UserListProps): React.ReactElement => {
         {users && 
           users.map((user) => {
             const { id, name, username, email, phone, website } = user;
+            const role = "tabel-row";
             return (
-              <tr key={id} className="trow" role="tabel-row">
+              <tr key={id} className="trow" role={role}>
                 <td>{name}</td>
                 <td>{username}</td>
                 <td>{email}</td>

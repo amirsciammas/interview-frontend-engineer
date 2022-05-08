@@ -7,11 +7,12 @@ interface PostsProps {
   posts: Array<Post>;
   isFetching: boolean;
   error: unknown | undefined;
+  isSuccess: boolean;
 }
 
 export const usePosts = (): PostsProps => {
   const [posts, setPosts] = useState<Array<Post> | null>(null);
-  const { data, isFetching, error } = useQuery(
+  const { data, isFetching, error, isSuccess } = useQuery(
     'post',
     () => getPosts(),
     {
@@ -29,5 +30,6 @@ export const usePosts = (): PostsProps => {
     posts: posts || [],
     isFetching,
     error,
+    isSuccess,
   };
 }
