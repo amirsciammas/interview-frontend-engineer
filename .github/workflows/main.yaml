@@ -1,7 +1,5 @@
 name: Adidas user/post frontend
 
-env:
-  DOCKER_USER: echo ${{ secrets.DOCKER_USER }} | base64 -d
 on:
   push:
     branches: [ develop ]
