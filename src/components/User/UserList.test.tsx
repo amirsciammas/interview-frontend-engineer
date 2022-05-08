@@ -1,6 +1,7 @@
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import User from '.';
+import { UserProvider } from '../UserContext';
 
 jest.mock('../../hooks/useUsers', () => {
   return {
@@ -41,7 +42,7 @@ const userListItems = [
 ];
 
 const getUserListWrapper = (): any => {
-  const { container, getByText, getByTestId } = render(<User />);
+  const { container, getByText, getByTestId } = render(<UserProvider><User /></UserProvider>);
   return { container, getByText, getByTestId };
 };
 
@@ -79,12 +80,12 @@ describe('Target User List Component', () => {
   });
 
   it('TC:005: Renders the User Table data correctly', () => {
-    const { queryAllByRole } = render(<User />); 
+    const { queryAllByRole } = render(<UserProvider><User /></UserProvider>); 
     expect(queryAllByRole('tabel-row')).toHaveLength(2);
   });
 
   it('TC:006: Test Input search', () => { 
-    const { queryByPlaceholderText, queryAllByRole } = render(<User />); 
+    const { queryByPlaceholderText, queryAllByRole } = render(<UserProvider><User /></UserProvider>); 
     const inputElement = queryByPlaceholderText('Enter the User name') as HTMLInputElement;    
     fireEvent.change(inputElement, { target: { value: 'Antonette' } });
     expect((inputElement).value).toBe('Antonette');
