@@ -1,22 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { useUsers } from '../../hooks/useUsers';
+import React, { useState, useEffect, useContext } from 'react';
 import { User } from '../../types/user';
+import UserContext from '../UserContext';
 import UserList from './UserList';
 
 const UserPage = (): React.ReactElement => {
-  const {
+  // Get the Users from Context API
+  const { 
     users,
-    isFetching: isFetchingUsers,
+    isFetchingUsers,
     error,
-  } = useUsers();
+  } = useContext(UserContext);
 
   const [userName, setUserName] = useState('');
   const [filteredUser, setFilteredUser] = useState<Array<User>>([]);
   useEffect(() => {
-    if (userName === "") {
-      setFilteredUser(users);
-    } else {     
-      setFilteredUser(users.filter((user) => user.username.toLowerCase().includes(userName.toLowerCase())));
+    if(users.length > 0) {
+      if (userName === "") {
+        setFilteredUser(users);
+      } else {     
+        setFilteredUser(users.filter((user) => user.username.toLowerCase().includes(userName.toLowerCase())));
+      }
     }
   },[users, userName]);
 
@@ -24,10 +27,6 @@ const UserPage = (): React.ReactElement => {
     return (      
       <h1>Fetching the User details</h1>      
     );
-  } else if(error || users?.length === 0) {
-    return ( 
-      <h1>No Results found</h1>
-    )
   } else {
     return (
       <div className='TableContainer'>     
@@ -41,7 +40,16 @@ const UserPage = (): React.ReactElement => {
             placeholder="Enter the User name"
           />
         </div>
-        <UserList users={filteredUser}></UserList>
+
+        {
+          (error || filteredUser?.length === 0 ) ? 
+          (
+            <h1>No Results found</h1>
+          ) :
+          (
+            <UserList users={filteredUser}></UserList>
+          )
+        }             
       </div>
     )
   }
