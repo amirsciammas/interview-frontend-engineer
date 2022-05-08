@@ -34,6 +34,7 @@ const UserPage = (): React.ReactElement => {
         <div className='Search'>
           <h2>Search By User Name: </h2>
           <input
+            data-testid="user-name"
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
