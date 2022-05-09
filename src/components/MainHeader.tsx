@@ -7,8 +7,8 @@ const MainHeader = (): React.ReactElement => {
     <div className="MainHeaderWrapper">       
       <ul className="LeftMenu">
         <li>
-          <a href="/users">
-            <div className={pathname === '/users' ? 'Active' : ''}>
+          <a href="/">
+            <div className={pathname === '/' ? 'Active' : ''}>
               Users
             </div>
           </a>

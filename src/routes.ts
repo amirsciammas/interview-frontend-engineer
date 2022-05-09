@@ -5,7 +5,7 @@ import UserByPost from './components/User/UserByPost';
 
 const routes = [
   {
-    path: '/users',
+    path: '/',
     component: UserPage,
     exact: true,
   },
