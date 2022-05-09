@@ -1,28 +1,94 @@
 # Frontend Engineer Interview Project
 
-### **High level spec**
+This is a FrontEnd application which is to browse the users and thier posts using the API http://jsonplaceholder.typicode.com/
 
-Your task is to build a Single Page Application in React that displays data from a public API.
+# Folder Structure:
 
-You will use JSONPlaceholder. JSONPlaceholder is a public API which will act as you backend server. You can find all the information about the API over here --> http://jsonplaceholder.typicode.com/
+  root structure:
+    ```
+    /.github      -> Contains the CI/CD pipeline code
+    /src          -> Contains the user and post components
+    Makefile       -> code to do all the adhoc activities
+    Dockerfile     -> To create the Docker Image
+    package       -> Contains the dev dependencies
+    ```
 
-The app should display 2 resources from the API: Users and Posts. 
-You should create an app that enable browsing of users and thier posts. 
+  .github:
+  ```
+   workflow/main.yaml (CI/CD file)
+  ```
 
-**You can design it in any way you like, but keep in mind that this is NOT a design task, so keep the UI simple and invest the time in building it properly.** 
+  src:
+  ```
+  api -> contains the api client code
+  components -> contains all UI logic and it's supporting implementaion.
+  hooks -> contains the custom hooks
+  layouts -> contains the default layout for all the pages
+  types -> contains all the typescript declarations
+  utils -> contains all utility/reusable functions
+  routes.ts -> contains all the UI routes
+  ```
 
------
+  public:
+  ```
+  It has all the images and index.html files
+  ```
+# API SPEC:
+Get user:
 
-### **How to share your results?**
-- [ ] Clone this repository and create your own branch to work on.
-- [ ] .... develop .....
-- [ ] Once you are ready, create a pull request with your code.
+```
+Request:
+http://jsonplaceholder.typicode.com/users
+Response:
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+  website: string;
+```
+
+Get posts:
+```
+http://jsonplaceholder.typicode.com/posts
+Response:
+  id: number;
+  userId: number;
+  title: string;
+  body: string;
+```
+
+# PreRequisite tools to run the project.
+1. Any machine with docker installed
+
+# PreRequisite tools to run the npm test.
+1. install npm 
+2. do npm install to install all the dependencies
+3. make test_app
+
+# How to run the Project:
+Please use the Makefile to run the project
+```
+make docker_build -> to build the docker image
+docker_push -> to push the docker image to docker registry
+docker_run -> to run the frontend app using docker(No need to install any depdencies like npm, react ..etc)
+start_app  -> to start the app using npm tool
+test_app   -> to start running the test cases
+build_app  -> to build the react app
+```
+
+TODO:
+```
+1. UI should be improved
+2. Could do more test coverage 
+```
+
+Libraries used:
+```
+1. React query  -> to fetch the data and maintain the state
+2. React router -> UI router
+3. axios        -> client library to make rpc/api calls
+4. jest         -> testing framework 
+```
 
 
-### **Evaluation:**
-- [ ] There should be **at least** 1 test written and the README file should include instructions on how to execute it.
-- [ ] The React app should build without errors (typically using `npm run build`). If there are necessary steps required to get it to compile, those should be covered in README.md.
-- [ ] No crashes or bugs.
-- [ ] Code is easily understood and communicative (eg. comments, variable names, etc). 
-- [ ] Everything that you decide to not do due to the limitation of time should be documented in the README.
-- [ ] GitHub commit history is consistent, easy to follow and understand. 
