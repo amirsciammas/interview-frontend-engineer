@@ -1,0 +1,20 @@
+.Header-Container {
+  background-color: #959698;
+  font-size: 16px;
+  font-weight: 600;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.Back-Button {
+  width: 40px;
+}
+.Back-Icon {
+  height: 25px;
+  width: 25px;
+}
+
+.Header-Title {
+  flex: 10;
+}

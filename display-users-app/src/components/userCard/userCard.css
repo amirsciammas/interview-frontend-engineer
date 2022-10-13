@@ -1,0 +1,35 @@
+.User-Card-Container {
+  height: 100px;
+  display: flex;
+  font-size: 12px;
+  flex-direction: column;
+  width: 33%;
+}
+.User-Card-Contents {
+  margin: 5px;
+  border: 1px solid #959698;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.User-Info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25px;
+}
+.User-Name {
+  align-self: start;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 145px;
+  overflow-wrap: initial;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.User-Item {
+  text-align: left;
+  height: 18px;
+}

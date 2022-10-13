@@ -1,0 +1,32 @@
+.Post-Card-Container {
+  height: 100px;
+  display: flex;
+  font-size: 12px;
+  flex-direction: column;
+  width: 33%;
+}
+.Post-Card-Contents {
+  margin: 5px;
+  border: 1px solid #959698;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.Post-Info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 25px;
+}
+.Post-Name {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: initial;
+  margin-bottom: 5px;
+}
+
+.Post-Item {
+  text-align: left;
+  height: 18px;
+}

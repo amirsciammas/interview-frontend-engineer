@@ -1,0 +1,40 @@
+.Home-Page-Container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.Home-Page-Contents {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.Home-Page-Users {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5px;
+  width: 100%;
+}
+
+.Search-Bar{
+  height: 40px;
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.Search-Text{
+  flex: 10;
+}
+
+.Clear-Icon{
+  height: 30px;
+  width: 30px;
+  margin-left: 1px;
+}
