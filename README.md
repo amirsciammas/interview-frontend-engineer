@@ -26,3 +26,14 @@ You should create an app that enable browsing of users and thier posts.
 - [ ] Code is easily understood and communicative (eg. comments, variable names, etc). 
 - [ ] Everything that you decide to not do due to the limitation of time should be documented in the README.
 - [ ] GitHub commit history is consistent, easy to follow and understand. 
+
+### **Steps to run the project**
+(The SPA is created using create-react-app here - App name -> user-app)
+- Go to the folder user-app.
+    - Run `npm install` to install all dependencies.
+    - Run `npm start` to run the app. 
+    - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+    - Run `npm test` to run test.
+
+    - Run `npm run build` to create the build.
