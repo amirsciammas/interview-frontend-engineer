@@ -1,0 +1,25 @@
+.flex{
+  display: flex;
+}
+
+.w-50{
+  width: 50%;
+}
+
+li{
+  border: 1px solid #69696936;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 1rem;
+    list-style-type: none;
+    cursor:pointer;
+}
+
+.info-text{
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.text-align-center{
+  text-align: center;
+}
