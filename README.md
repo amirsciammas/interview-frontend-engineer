@@ -2,7 +2,7 @@
 
 ### **High level spec**
 
-Your task is to build a Single Page Application in React that displays data from a public API.
+Your task is to build a Single Page Application using TypeScript and React that displays data from a public API.
 
 You will use JSONPlaceholder. JSONPlaceholder is a public API which will act as you backend server. You can find all the information about the API over here --> http://jsonplaceholder.typicode.com/
 
