@@ -29,7 +29,7 @@ const Post = () => {
       try {
         setLoading(true);
         const result = await axios.get('http://jsonplaceholder.typicode.com/posts?userId=' + userId);
-        if (result?.status === 200 && result?.statusText === 'OK') {
+        if (result?.status === 200) {
           if (result?.data && Array.isArray(result?.data) && result?.data.length > 0) {
             setPostDetail(result.data);
           } else {
