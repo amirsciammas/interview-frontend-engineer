@@ -1,6 +1,6 @@
 import { render, act, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Post from '../Post';
+import Post from './Post';
 import '@testing-library/jest-dom'
 import axios from 'axios';
 
