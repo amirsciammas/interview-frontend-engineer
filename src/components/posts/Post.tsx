@@ -14,7 +14,7 @@ type PostDetail = {
 }
 
 const Post = () => {
-    let { postId } = useParams();
+    let { userId } = useParams();
     const navigate = useNavigate();
     const [postDetail, setPostDetail] = useState<PostDetail>({
         id: null,
@@ -29,12 +29,12 @@ const Post = () => {
         getPost();
         return () => {};
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [postId]);
+    }, [userId]);
   
     const getPost = async () => {
       try {
         setLoading(true);
-        const result = await axios.get('http://jsonplaceholder.typicode.com/posts/' + postId);
+        const result = await axios.get('http://jsonplaceholder.typicode.com/posts/' + userId);
         if (result?.status === 200 && result?.statusText === 'OK') {
           if (result?.data && Object.keys(result?.data) && Object.keys(result?.data).length > 0) {
             setPostDetail(result.data);
