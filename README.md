@@ -11,7 +11,3 @@ To build this web-app, run `npm run build` in root directory of the repository
 
 To test this web-app, run `npm run test` in root directory of the repository
 
-# Live Demo
-
-Visit the link - 
-
