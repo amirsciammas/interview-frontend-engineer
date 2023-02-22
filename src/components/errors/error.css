@@ -1,0 +1,36 @@
+.error-container {
+    position: relative;
+    margin: 8px;
+    height: 100vh;
+}
+
+.error-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.error-title {
+    font-size: 24px;
+    color: #000000DE;
+    font-weight: 600;
+    margin: 8px 0px;
+}
+
+.error-detail {
+    font-size: 16px;
+    color: #000000DE;
+    font-weight: 400;
+    margin: 8px 0px 16px 0px;
+}
+
+.error-action {
+    padding: 12px 18px;
+    background-color: #3498db;
+    color: #FFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

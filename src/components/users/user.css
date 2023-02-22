@@ -1,0 +1,7 @@
+.user-container {
+    padding: 8px;
+    display: grid;
+    row-gap: 4px;
+    column-gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
