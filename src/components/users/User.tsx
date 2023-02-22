@@ -54,7 +54,7 @@ const User = () => {
       {!loading && !error && userList && userList.length > 0 && 
         <div className='user-container'>
           <>
-            {userList.map((user, idx) => 
+            {userList.map((user: any, idx: number) => 
               <div key={user?.id + idx}>
                 <Card data={user} />
               </div>

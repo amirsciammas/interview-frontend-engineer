@@ -18,12 +18,12 @@ test("should render the post successfully", async () => {
     mockedAxios.get.mockResolvedValue({
         status: 200,
         statusText: "OK",
-        data: {
+        data: [{
             "userId": 1,
             "id": 2,
             "title": "qui est esse",
             "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-        }
+        }]
     });
     await act(async () => {
         render(
@@ -34,7 +34,7 @@ test("should render the post successfully", async () => {
     });
     expect(screen.getByTestId('test-post')).toBeInTheDocument();
     expect(screen.getByText('qui est esse')).toBeInTheDocument();
-    expect(axios.get).toHaveBeenCalledWith('http://jsonplaceholder.typicode.com/posts/undefined');
+    expect(axios.get).toHaveBeenCalledWith('http://jsonplaceholder.typicode.com/posts?userId=undefined');
     expect(axios.get).toHaveBeenCalledTimes(1);
     expect(screen.getByRole('button').textContent).toEqual('Back to users');
 });

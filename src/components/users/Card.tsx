@@ -13,8 +13,8 @@ const getRandomColor = () => {
 const Card = ({ data }: Props) => {
     const navigate = useNavigate();
 
-    const handleSeePosts = (id: number) => {
-        navigate('/post/' + id);
+    const handleSeePosts = (id: number, name: string) => {
+        navigate(`/${name}/post/${id}`);
     }
 
     return (
@@ -25,7 +25,7 @@ const Card = ({ data }: Props) => {
             <div className='card-detail'>
                 <div className='card-title'>{data?.name}</div>
                 <div className='card-sub-title'>{data?.email}</div>
-                <div className='card-link' onClick={() => handleSeePosts(data?.id)}>See posts</div>
+                <div className='card-link' onClick={() => handleSeePosts(data?.id, data?.name)}>See posts</div>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ const Routing = () => {
         <Suspense fallback={<Loader />}>
             <Routes>
                 <Route path='/' element={<User />} />
-                <Route path='/post/:postId' element={<Post />} />
+                <Route path='/:userName/post/:userId' element={<Post />} />
                 <Route path='*' element={<Error title="Page not found" body="Uh oh, we can't seem to find the page you're looking for. Try going back to the dashboard" />} />
             </Routes>
         </Suspense>
