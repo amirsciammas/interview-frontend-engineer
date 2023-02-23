@@ -17,10 +17,23 @@ const Card = ({ data }: Props) => {
         navigate(`/${name}/post/${id}`);
     }
 
+    const getAndSetInitials = (name: string) => {
+        let initials = '';
+        const names = name.toUpperCase().split(" ");
+        if (names.length === 1) {
+            initials = names[0].substring(0, 1).toUpperCase();
+        } else if (names.length > 1) {
+            names.forEach((_, i) => {
+                initials += names[i].substring(0, 1).toUpperCase();
+            });
+        }
+        return initials;
+    }
+
     return (
         <div className='card-container'>
             <div className='card-avatar' style={{ background: '#' + getRandomColor() }}>
-                <div className='card-name'>SP</div>
+                <div className='card-name'>{getAndSetInitials(data?.name)}</div>
             </div>
             <div className='card-detail'>
                 <div className='card-title'>{data?.name}</div>
