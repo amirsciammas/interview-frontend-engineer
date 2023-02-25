@@ -3,11 +3,11 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom';
-import Home from '../pages/Home';
-import Posts from '../pages/Posts';
-import SelectedPost from '../pages/SelectedPost';
-import SelectedUser from '../pages/SelectedUser';
-import Users from '../pages/Users';
+import Home from '../components/Home';
+import Posts from '../components/Posts/Posts';
+import SelectedPost from '../components/SelectedPost/SelectedPost';
+import SelectedUser from '../components/SelectedUser/SelectedUser';
+import Users from '../components/Users/User';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
