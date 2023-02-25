@@ -1,3 +1,19 @@
+# Task Details
+## **To run the Application**
+
+- Clone the repository
+- Change the directory to adidas-task using the command - cd adidas-task/
+- install packages using the command - npm install
+- Run the application using the command - npm start
+
+## **To run the tests**
+- Use the command - npm run test
+
+## **Libraries Used**
+- react-router-dom to route the user to specific paths
+- Mock Service Worker (msw) to test the API
+
+
 # Frontend Engineer Interview Project
 
 ### **High level spec**
