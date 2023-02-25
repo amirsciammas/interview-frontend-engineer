@@ -1,5 +1,6 @@
-import { IUser } from '../../common/types';
-import { useFetch } from '../../hooks/useFetch';
+import { IUser } from '../../../common/types';
+import { useFetch } from '../../../hooks/useFetch';
+import User from './User/User';
 export const AllUsers = () => {
   const { data, loading } = useFetch<IUser[]>(
     `https://jsonplaceholder.typicode.com/users`,
@@ -13,7 +14,7 @@ export const AllUsers = () => {
   return (
     <div>
       {data.map(user => (
-        <div key={user.id}>{user.name}</div>
+        <User key={user.id} user={user} />
       ))}
     </div>
   );

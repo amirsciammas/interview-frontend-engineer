@@ -16,5 +16,12 @@ export const SinglePost = () => {
   if (loading) {
     return <p>Loading data....</p>;
   }
-  return <div>{data.title}</div>;
+  return (
+    <>
+      <p>Post Id: {data.id}</p>
+      <p>User Id: {data.userId}</p>
+      <p>Title: {data.title}</p>
+      <p>Body: {data.body}</p>
+    </>
+  );
 };
