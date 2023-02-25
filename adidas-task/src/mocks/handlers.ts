@@ -1,4 +1,4 @@
-import { setupWorker, rest } from 'msw';
+import { rest } from 'msw';
 export const handlers = [
   rest.get('https://jsonplaceholder.typicode.com/posts', (req, res, ctx) => {
     return res(

@@ -5,14 +5,12 @@ export const useFetch = <T,>(url: string, initialValue: any) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [isApiSuccess, setIsApiSuccess] = useState<boolean>(true);
 
+  // Common function to make API calls
   const getAPIData = async () => {
     setLoading(true);
-    console.log('Insiidee');
     try {
-      console.log(url);
       const apiResponse = await fetch(url);
       const json: T = await apiResponse.json();
-      console.log(apiResponse);
       setIsApiSuccess(apiResponse.ok);
       setData(json);
     } catch (error) {
@@ -26,6 +24,7 @@ export const useFetch = <T,>(url: string, initialValue: any) => {
 
     if (!isCancelled) getAPIData();
 
+    // Clean up function. Used to cancel the current API call when any other API is called
     return () => {
       isCancelled = true;
     };

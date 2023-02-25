@@ -1,4 +1,3 @@
-import React from 'react';
 import { IUser } from '../../../../common/types';
 
 interface IUserProps {
