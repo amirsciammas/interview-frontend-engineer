@@ -4,19 +4,27 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from '../components/Home';
-import Posts from '../components/Posts/Posts';
-import SelectedPost from '../components/SelectedPost/SelectedPost';
-import SelectedUser from '../components/SelectedUser/SelectedUser';
-import Users from '../components/Users/User';
+import NotFound from '../components/NotFound';
+import { AllPosts, SinglePost, PostError } from '../components/Posts';
+import { AllUsers, SingleUser, UserError } from '../components/Users';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Home />} />
-      <Route path="/posts" element={<Posts />} />
-      <Route path="/users" element={<Users />} />
-      <Route path="/posts/:id" element={<SelectedPost />} />
-      <Route path="/users/:id" element={<SelectedUser />} />
+      <Route path="/posts" element={<AllPosts />} />
+      <Route path="/users" element={<AllUsers />} />
+      <Route
+        path="/posts/:id"
+        element={<SinglePost />}
+        errorElement={<PostError />}
+      />
+      <Route
+        path="/users/:id"
+        element={<SingleUser />}
+        errorElement={<UserError />}
+      />
+      <Route path="*" element={<NotFound />} />
     </>
   )
 );
