@@ -7,7 +7,9 @@ export const useFetch = <T,>(url: string, initialValue: any) => {
 
   const getAPIData = async () => {
     setLoading(true);
+    console.log('Insiidee');
     try {
+      console.log(url);
       const apiResponse = await fetch(url);
       const json: T = await apiResponse.json();
       console.log(apiResponse);
@@ -20,7 +22,13 @@ export const useFetch = <T,>(url: string, initialValue: any) => {
   };
 
   useEffect(() => {
-    getAPIData();
+    let isCancelled = false;
+
+    if (!isCancelled) getAPIData();
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   return { data, loading, isApiSuccess };

@@ -7,7 +7,7 @@ interface IUserProps {
 
 const User = ({ user }: IUserProps) => {
   return (
-    <div className="list-body">
+    <li className="list-body">
       <p>User Id: {user.id}</p>
       <p>Username: {user.username}</p>
       <p>Name: {user.name}</p>
@@ -23,7 +23,7 @@ const User = ({ user }: IUserProps) => {
       <p>Zipcode: {user.address.zipcode}</p>
       <p>Geo Latitude: {user.address.geo.lat}</p>
       <p>Geo Longitude: {user.address.geo.lng}</p>
-    </div>
+    </li>
   );
 };
 

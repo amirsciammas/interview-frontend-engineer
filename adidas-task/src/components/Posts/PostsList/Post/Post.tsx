@@ -7,12 +7,12 @@ interface IPostProps {
 
 const Post = ({ post }: IPostProps) => {
   return (
-    <div className="list-body">
+    <li className="list-body">
       <p>Post Id: {post.id}</p>
       <p>User Id: {post.userId}</p>
       <p>Title: {post.title}</p>
       <p>Body: {post.body}</p>
-    </div>
+    </li>
   );
 };
 

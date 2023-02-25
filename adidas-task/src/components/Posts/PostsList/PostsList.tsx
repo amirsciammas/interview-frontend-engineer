@@ -1,7 +1,7 @@
 import { IPost } from '../../../common/types';
 import { useFetch } from '../../../hooks/useFetch';
 import Post from './Post/Post';
-export const AllPosts = () => {
+export const PostsList = () => {
   const { data, loading } = useFetch<IPost[]>(
     `https://jsonplaceholder.typicode.com/posts`,
     []
@@ -13,6 +13,7 @@ export const AllPosts = () => {
 
   return (
     <div>
+      <h1>Posts</h1>
       {data.map(post => (
         <Post key={post.id} post={post} />
       ))}

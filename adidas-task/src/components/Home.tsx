@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className="home-nav__links">
       <div className="home-nav__links__item">
-        <p>To view all users, click below</p>
+        <p className="heading">To view all users, click below</p>
         <Link to="users">Users</Link>
       </div>
       <div className="home-nav__links__item">

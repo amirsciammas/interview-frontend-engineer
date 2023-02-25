@@ -1,3 +1,3 @@
-export { AllPosts } from './PostsList/PostsList';
-export { SinglePost } from './SinglePost';
+export { PostsList } from './PostsList/PostsList';
+export { SelectedPost } from './SelectedPost/SelectedPost';
 export { PostError } from './PostError';

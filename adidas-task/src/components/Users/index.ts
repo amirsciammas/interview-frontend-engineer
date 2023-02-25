@@ -1,3 +1,3 @@
-export { AllUsers } from './UsersList/UsersList';
-export { SingleUser } from './SingleUser';
+export { UsersList } from './UsersList/UsersList';
+export { SelectedUser } from './SelectedUser/SelectedUser';
 export { UserError } from './UserError';

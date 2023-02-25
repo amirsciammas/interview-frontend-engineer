@@ -36,21 +36,3 @@ export interface IUser {
   website: string;
   company: ICompany;
 }
-
-export interface FetchAllPostsSuccessResponse {
-  isOk: true;
-  data: IPost[];
-  error: null;
-}
-
-export interface FetchSinglePostsSuccessResponse {
-  isOk: true;
-  data: IPost;
-  error: null;
-}
-
-export interface FetchErrorResponse {
-  isOk: false;
-  data: null;
-  error: string;
-}

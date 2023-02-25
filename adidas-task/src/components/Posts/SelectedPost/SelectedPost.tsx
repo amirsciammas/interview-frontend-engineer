@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { IPost } from '../../common/types';
+import { IPost } from '../../../common/types';
 import { useParams } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
+import { useFetch } from '../../../hooks/useFetch';
 
-export const SinglePost = () => {
+export const SelectedPost = () => {
   const { id } = useParams();
   const { data, loading, isApiSuccess } = useFetch<IPost>(
     `https://jsonplaceholder.typicode.com/posts/${id}`,
