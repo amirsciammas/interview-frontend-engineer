@@ -1,28 +1,46 @@
-# Frontend Engineer Interview Project
+# Getting Started with Create React App
 
-### **High level spec**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Your task is to build a Single Page Application using TypeScript and React that displays data from a public API.
+## Available Scripts
 
-You will use JSONPlaceholder. JSONPlaceholder is a public API which will act as you backend server. You can find all the information about the API over here --> http://jsonplaceholder.typicode.com/
+In the project directory, you can run:
 
-The app should display 2 resources from the API: Users and Posts. 
-You should create an app that enable browsing of users and thier posts. 
+### `npm start`
 
-**You can design it in any way you like, but keep in mind that this is NOT a design task, so keep the UI simple and invest the time in building it properly.** 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
------
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### **How to share your results?**
-- [ ] Clone this repository to your private account.
-- [ ] .... develop .....
-- [ ] Once you are ready, create a pull request from your private repo and branch to the original repository.
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### **Evaluation:**
-- [ ] There should be **at least** 1 test written and the README file should include instructions on how to execute it.
-- [ ] The React app should build without errors (typically using `npm run build`). If there are necessary steps required to get it to compile, those should be covered in README.md.
-- [ ] No crashes or bugs.
-- [ ] Code is easily understood and communicative (eg. comments, variable names, etc). 
-- [ ] Everything that you decide to not do due to the limitation of time should be documented in the README.
-- [ ] GitHub commit history is consistent, easy to follow and understand. 
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
