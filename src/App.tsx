@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { User } from './components';
+import { Users } from './pages/Users';
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<User />} />
+      <Route path="/" element={<Users />} />
 
       {/* <Route/> */}
     </Routes>
