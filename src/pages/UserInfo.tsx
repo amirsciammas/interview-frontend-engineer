@@ -12,8 +12,6 @@ export const UserInfo = () => {
 
   const post = posts && id ? findValueInList(posts.data, 'userId', +id) : null;
 
-  console.log({ isPending, posts, post });
-
   return <>{isPending || !post ? <Loading /> : <Post post={post} />}</>;
 };
 
@@ -25,6 +23,7 @@ type PostProps = {
 const Post = ({ post }: PostProps) => {
   return (
     <div>
+      <h3>Users Post</h3>
       <strong>{post.title}</strong>
       <div>{post.body}</div>
     </div>

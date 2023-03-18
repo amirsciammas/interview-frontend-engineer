@@ -5,7 +5,6 @@ import './index.module.css';
 
 export const Users = (): JSX.Element => {
   const { isPending, users } = useUsers();
-  console.log('users data:', users);
   return (
     <>
       {isPending || !users ? (
