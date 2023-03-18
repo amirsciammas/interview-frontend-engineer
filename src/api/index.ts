@@ -8,7 +8,7 @@ const get = async <T>(url: string) => {
 
 const getUsers = async (): Promise<Response<User[]>> => {
     const response = await get<User[]>(USERS);
-    return resolveResponse(response);
+    return resolveResponse<User[]>(response);
 }
 
 const getPosts = async (): Promise<Response<Post[]>> => {
@@ -16,7 +16,7 @@ const getPosts = async (): Promise<Response<Post[]>> => {
     return resolveResponse(response);
 }
 
-const resolveResponse = (response: AxiosResponse) => {
+const resolveResponse = <T>(response: AxiosResponse): Response<T> => {
     if (response.status === 200) {
         return { isError: false, data: response.data }
     }

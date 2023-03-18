@@ -1,11 +1,10 @@
 import { Response, User } from "../types";
 
-export const users: Response<User[]> = {
-    isError: false,
-    data: [
+export const users: User[] =
+    [
         {
             "id": 1,
-            "name": "Leanne Graham",
+            "name": "Leanne Kumar",
             "username": "Bret",
             "email": "Sincere@april.biz",
             "address": {
@@ -48,5 +47,5 @@ export const users: Response<User[]> = {
                 "catchPhrase": "Proactive didactic contingency",
                 "bs": "synergize scalable supply-chains"
             }
-        }]
-}
+        }
+    ]
