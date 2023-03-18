@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { User as UserType } from '../../types';
 import { Button } from '../button';
+import styles from './styles.module.css';
 
 type UserProps = {
   user: UserType;
@@ -14,14 +15,16 @@ export const User = ({ user }: UserProps) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className={styles.user}>
+      <div className={styles.userInfo}>
         <h3>{user.name}</h3>
-        <div>{user.email}</div>
-        <div>{user.company.name}</div>
-      </div>
-      <div>
-        <Button onClick={onUserClick}>Show Post</Button>
+        <ul>
+          <li>{user.email}</li>
+          <li>{user.company.name}</li>
+        </ul>
+        <div>
+          <Button onClick={onUserClick}>Show Post</Button>
+        </div>
       </div>
     </div>
   );

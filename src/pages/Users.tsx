@@ -4,17 +4,22 @@ import { User as UserType } from '../types';
 
 export const Users = (): JSX.Element => {
   const { isPending, users } = useUsers();
-
-  return <>{isPending || !users ? <Loading /> : <UserList users={users.data} />}</>;
+  return (
+    <>
+      {isPending || !users ? (
+        <Loading />
+      ) : users.isError ? (
+        <div>Unable to fetch users</div>
+      ) : (
+        <UserList users={users.data} />
+      )}
+    </>
+  );
 };
 
 type UserListProps = {
   users: UserType[];
 };
-
-// const handleClick = () => {
-//   console.log('called handleClick');
-// };
 
 const UserList = ({ users }: UserListProps) => {
   return (

@@ -1,0 +1,9 @@
+.layout {
+  max-width: 1200px;
+}
+
+@media only screen and (min-width: 768px) {
+  .layout {
+    margin: 0 auto;
+  }
+}
