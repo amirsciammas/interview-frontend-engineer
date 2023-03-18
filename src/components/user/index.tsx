@@ -1,12 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { User as UserType } from '../../types';
 import { Button } from '../button';
 
 type UserProps = {
   user: UserType;
-  onUserClick: () => void;
 };
 
-export const User = ({ user, onUserClick }: UserProps) => {
+export const User = ({ user }: UserProps) => {
+  const navigate = useNavigate();
+
+  const onUserClick = () => {
+    navigate(`/user/${user.id}`);
+  };
+
   return (
     <div>
       <div>
@@ -15,7 +21,7 @@ export const User = ({ user, onUserClick }: UserProps) => {
         <div>{user.company.name}</div>
       </div>
       <div>
-        <Button onClick={onUserClick}></Button>
+        <Button onClick={onUserClick}>Show Post</Button>
       </div>
     </div>
   );

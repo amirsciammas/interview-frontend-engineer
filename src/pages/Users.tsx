@@ -12,15 +12,15 @@ type UserListProps = {
   users: UserType[];
 };
 
-const handleClick = () => {
-  console.log('called handleClick');
-};
+// const handleClick = () => {
+//   console.log('called handleClick');
+// };
 
 const UserList = ({ users }: UserListProps) => {
   return (
     <>
       {users.map((user) => (
-        <User key={user.id} user={user} onUserClick={handleClick} />
+        <User key={user.id} user={user} />
       ))}
     </>
   );

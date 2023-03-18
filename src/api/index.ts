@@ -1,16 +1,27 @@
-import axios from "axios";
-import { User, Response } from "../types";
-import { USERS } from "./urls"
+import axios, { AxiosResponse } from "axios";
+import { User, Response, Post } from "../types";
+import { POSTS, USERS } from "./urls"
 
+const get = async <T>(url: string) => {
+    return await axios.get<T>(url);
+}
 
 const getUsers = async (): Promise<Response<User[]>> => {
-    const response = await axios.get<User[]>(USERS)
+    const response = await get<User[]>(USERS);
+    return resolveResponse(response);
+}
+
+const getPosts = async (): Promise<Response<Post[]>> => {
+    const response = await get<Post[]>(POSTS);
+    return resolveResponse(response);
+}
+
+const resolveResponse = (response: AxiosResponse) => {
     if (response.status === 200) {
         return { isError: false, data: response.data }
     }
     return { isError: true, data: response.data }
-
 }
 
 
-export { getUsers }
+export { getUsers, getPosts }

@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { Users } from './pages/Users';
+import { UserInfo, Users } from './pages';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Users />} />
-
-      {/* <Route/> */}
+      <Route path="/user/:id" element={<UserInfo />} />
     </Routes>
   );
 };
