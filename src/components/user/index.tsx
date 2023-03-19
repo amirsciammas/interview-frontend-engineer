@@ -1,6 +1,4 @@
-import { useNavigate } from 'react-router-dom';
 import { User as UserType } from '../../types';
-import { Button } from '../button';
 import styles from './styles.module.css';
 
 type UserProps = {
@@ -8,7 +6,6 @@ type UserProps = {
 };
 
 export const User = ({ user }: UserProps) => {
-
   return (
     <div className={styles.user}>
       <div className={styles.userInfo}>
