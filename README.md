@@ -26,3 +26,20 @@ You should create an app that enable browsing of users and thier posts.
 - [ ] Code is easily understood and communicative (eg. comments, variable names, etc). 
 - [ ] Everything that you decide to not do due to the limitation of time should be documented in the README.
 - [ ] GitHub commit history is consistent, easy to follow and understand. 
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
