@@ -5,6 +5,7 @@ div > h2 {
 .users {
   display: flex;
   flex-flow: row wrap;
+  margin-top: 1rem;
 }
 
 .user {

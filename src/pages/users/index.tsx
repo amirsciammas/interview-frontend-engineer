@@ -4,6 +4,7 @@ import { useUsers } from '../../hooks';
 import { User as UserType } from '../../types';
 import styles from './index.module.css';
 import './index.module.css';
+import { Heading } from '../../components/heading';
 
 export const Users = (): JSX.Element => {
   const { isPending, users } = useUsers();
@@ -34,7 +35,9 @@ const UserList = ({ users }: UserListProps) => {
 
   return (
     <>
-      <h2>Users</h2>
+      <Heading>
+        <>Users</>
+      </Heading>
       <div role="list" className={styles.users}>
         {users.map((user) => (
           <div className={styles.user} key={user.id}>

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Back, Loading, Post } from '../../components';
+import { Back, Heading, Loading, Post } from '../../components';
 import { usePosts } from '../../hooks/usePosts';
 import { filterValueInList } from '../../utils';
 import { Post as PostType } from '../../types/post';
@@ -28,7 +28,9 @@ const PostList = ({ author, posts }: PostListProps) => {
   return (
     <>
       <Back />
-      <h2>Posts by {author}</h2>
+      <Heading>
+        <>Posts by {author}</>
+      </Heading>
 
       {posts.length === 0 && <h2> No post found</h2>}
       <div role="list" className={styles.posts}>

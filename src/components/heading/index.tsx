@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Heading = () => {
-  return <div>Heading</div>;
-};
+type HeadingProps = {
+  children: JSX.Element
+}
 
-export default Heading;
+export const Heading = ({children}: HeadingProps ) => {
+  return <h2>{children}</h2>;
+};

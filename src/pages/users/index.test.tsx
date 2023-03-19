@@ -17,7 +17,7 @@ describe('user list', () => {
     server.use(
       rest.get(USERS, (req, res, ctx) => {
         return res(ctx.status(500));
-      }),
+      })
     );
 
     render(<Users />, { wrapper: MemoryRouter });
