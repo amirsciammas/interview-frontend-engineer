@@ -2,12 +2,13 @@ div > h2 {
   text-align: center;
 }
 
-.users {
+.posts {
   display: flex;
   flex-flow: row wrap;
+  margin-top: 1rem;
 }
 
-.user {
+.post {
   border: 1px solid #8883834a;
   display: flex;
   flex-flow: column wrap;
@@ -15,7 +16,7 @@ div > h2 {
   width: 50%;
 }
 
-.user > button {
+.post > button {
   margin-top: 10px;
   max-width: 100px;
 }

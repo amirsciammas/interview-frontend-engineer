@@ -1,12 +1,6 @@
-.user {
-  padding: 2rem;
-}
-
 .user > div {
   display: flex;
   flex-flow: column wrap;
-  padding: 1rem;
-  border: 1px solid #8883834a;
 }
 
 .userInfo ul {

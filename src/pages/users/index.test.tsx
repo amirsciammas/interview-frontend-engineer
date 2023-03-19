@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { rest } from 'msw';
-
 import { MemoryRouter } from 'react-router-dom';
+
 import { Users } from '.';
 import { USERS } from '../../api/urls';
 import { server } from '../../mock-server';

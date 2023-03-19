@@ -8,11 +8,6 @@ type UserProps = {
 };
 
 export const User = ({ user }: UserProps) => {
-  const navigate = useNavigate();
-
-  const onUserClick = () => {
-    navigate(`/user/${user.id}`);
-  };
 
   return (
     <div className={styles.user}>
@@ -22,9 +17,6 @@ export const User = ({ user }: UserProps) => {
           <li>{user.email}</li>
           <li>{user.company.name}</li>
         </ul>
-        <div>
-          <Button onClick={onUserClick}>Show Post</Button>
-        </div>
       </div>
     </div>
   );

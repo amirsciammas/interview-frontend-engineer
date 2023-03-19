@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Post as PostType } from '../../types/post';
+import styles from './index.module.css';
 
-const Post = () => {
+type PostProps = {
+  author?: string;
+  post: PostType;
+};
+
+export const Post = ({ post }: PostProps) => {
   return (
-    <div>Post</div>
-  )
-}
-
-export default Post
+    <div className={styles.post}>
+      <h3>{post.title}</h3>
+      <div>{post.body}</div>
+    </div>
+  );
+};
