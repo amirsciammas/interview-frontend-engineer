@@ -1,0 +1,41 @@
+.table {
+  font-size: 12px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.main-table-cell {
+  width: 20%;
+}
+
+.table-head p {
+  padding: 8px 3px;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.table-head p {
+  color: #000000;
+}
+
+.table-body:nth-child(2n-1) {
+  background-color: darkgrey;
+}
+
+.postData:nth-child(2n-1) {
+  background-color: lightgrey;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-color-blue {
+  color: blue;
+}
