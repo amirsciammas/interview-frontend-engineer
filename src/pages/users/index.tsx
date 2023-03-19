@@ -29,7 +29,7 @@ const UserList = ({ users }: UserListProps) => {
   const navigator = useNavigate();
 
   const onUserClick = (user: UserType) => {
-    navigator(`/user/posts/${user.id}`);
+    navigator(`/user/posts/${user.name}/${user.id}`);
   };
 
   return (

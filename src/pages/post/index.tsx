@@ -7,24 +7,28 @@ import { Post as PostType } from '../../types/post';
 import styles from './index.module.css';
 
 export const PostPage = () => {
-  const { id } = useParams();
+  const { id, name } = useParams();
 
   const { isPending, posts } = usePosts();
 
   const postList = posts && id ? filterValueInList(posts.data, 'userId', +id) : null;
+  const author = name ? name : '';
 
-  return <>{isPending || !postList ? <Loading /> : <PostList posts={postList} />}</>;
+  return (
+    <>{isPending || !postList ? <Loading /> : <PostList author={author} posts={postList} />}</>
+  );
 };
 
 type PostListProps = {
   posts: PostType[];
+  author: string;
 };
 
-const PostList = ({ posts }: PostListProps) => {
+const PostList = ({ author, posts }: PostListProps) => {
   return (
     <>
       <Back />
-      <h2>Posts</h2>
+      <h2>Posts by {author}</h2>
 
       {posts.length === 0 && <h2> No post found</h2>}
       <div role="list" className={styles.posts}>

@@ -11,7 +11,7 @@ const RouteHandler = () => {
   return (
     <Routes>
       <Route path="/" element={<Users />} />
-      <Route path="/user/posts/:id" element={<PostPage />} />
+      <Route path="/user/posts/:name/:id" element={<PostPage />} />
     </Routes>
   );
 };
