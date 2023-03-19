@@ -37,8 +37,8 @@ const UserList = ({ users }: UserListProps) => {
       <h2>Users</h2>
       <div role="list" className={styles.users}>
         {users.map((user) => (
-          <div className={styles.user}>
-            <User key={user.id} user={user} />
+          <div className={styles.user} key={user.id}>
+            <User user={user} />
             <Button onClick={() => onUserClick(user)}>Show Post</Button>
           </div>
         ))}

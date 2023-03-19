@@ -29,7 +29,7 @@ const PostList = ({ posts }: PostListProps) => {
       {posts.length === 0 && <h2> No post found</h2>}
       <div role="list" className={styles.posts}>
         {posts.map((post) => (
-          <div className={styles.post}>
+          <div className={styles.post} key={post.id}>
             <Post key={post.id} post={post} />
           </div>
         ))}
