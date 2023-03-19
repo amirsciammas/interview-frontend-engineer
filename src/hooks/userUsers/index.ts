@@ -4,7 +4,7 @@ import { User, Response } from "../../types";
 
 export const useUsers = () => {
     const [users, setUsers] = useState<Response<User[]>>();
-    const [isPending, setIsPending] = useState<boolean>(false)
+    const [isPending, setIsPending] = useState<boolean>(false);
 
     useEffect(() => {
         (async () => {
