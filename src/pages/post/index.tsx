@@ -5,13 +5,17 @@ import { filterValueInList } from '../../utils';
 import { Post as PostType } from '../../types/post';
 
 import styles from './index.module.css';
+import { useMemo } from 'react';
 
 export const PostPage = () => {
   const { id, name } = useParams();
 
   const { isPending, posts } = usePosts();
 
-  const postList = posts && id ? filterValueInList(posts.data, 'userId', +id) : null;
+  const postList = useMemo(() => {
+    return posts && id ? filterValueInList(posts.data, 'userId', +id) : null;
+  }, [id, posts]);
+
   const author = name ? name : '';
 
   return (
