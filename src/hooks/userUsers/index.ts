@@ -2,7 +2,13 @@ import { useEffect, useState } from "react"
 import { getUsers } from "../../api";
 import { User, Response } from "../../types";
 
-export const useUsers = () => {
+
+type useUserProps = {
+    users: Response<User[]> | undefined;
+    isPending: boolean;
+}
+
+export const useUsers = (): useUserProps => {
     const [users, setUsers] = useState<Response<User[]>>();
     const [isPending, setIsPending] = useState<boolean>(false);
 

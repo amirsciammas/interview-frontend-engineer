@@ -2,7 +2,12 @@ import { useEffect, useState } from "react"
 import { getPosts } from "../../api";
 import { Post, Response } from "../../types";
 
-export const usePosts = () => {
+type usePostsProps = {
+    posts: Response<Post[]> | undefined;
+    isPending: boolean;
+}
+
+export const usePosts = (): usePostsProps => {
     const [posts, setPosts] = useState<Response<Post[]>>();
     const [isPending, setIsPending] = useState<boolean>(false)
 
