@@ -5,6 +5,8 @@ import Profile from './components/Profile';
 
 import styles from './home.module.css';
 
+// Définition des types TypeScript
+
 type postObject =
   {
     userId: number,
@@ -40,21 +42,28 @@ type postObject =
 
 function App() {
 
+  //Valeur de Loading et d'erreur
   const [isDataLoading, setDataLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  //Valeurs qui stockent les valeurs fetch Post et User
   const [postsList, setPostsList] = useState<postObject>([{userId:1, id:0, title:'', body:''}]);
   const [usersList, setUsersList] = useState<userObject[]>();
 
+  // Valeurs permettant le switch entre visibilité des Posts ou de la page Utilisateur
   const [postsVisibility, setPostsVisibility] = useState(true);
   const [userVisibility, setUserVisibility] = useState(false);
 
+  // Valeurs permettant le scope de l'utilisateur lié au post cliqué
   const [userScope, setUserScope] = useState(1);
   const [userPosts, setUserPosts] = useState<postObject>([{userId:1, id:0, title:'', body:''}]);
 
+  // Valeur dynamique de la searchbar
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
+
+    // Fonction de fetch des Posts avec randomisation intégrée
     async function fetchPosts() {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -69,6 +78,7 @@ function App() {
       }
     }
 
+    // Fonction de fetch simple des utilisateurs
     async function fetchUsers() {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -90,6 +100,8 @@ function App() {
     return <p>Error</p>
   } 
 
+  // Fonction permettant de switcher entre page utilisateur et post.
+  // La valeur param prend l'action à faire, le newUserScope la valeur de l'utilisateur ciblé.
   function switchPostsUser (param: string, newUserScope: number, postsList: postObject) {
     if (param === 'userON'){
       setPostsVisibility(false)
@@ -108,6 +120,7 @@ function App() {
     }
   }
 
+  // FilteredPosts permet d'avoir une valeur filtrée des post en fonction de la valeur de la searchbar
   const filteredPosts = postsList?.filter((post) =>
   inputValue ? post.title.toLowerCase().includes(inputValue.toLowerCase()) : true
 );
@@ -117,7 +130,7 @@ function App() {
     <div className={styles.global}>
       <h1>Social<br/>Opinion</h1>
       { isDataLoading ? (
-      <section> Chargement </section>
+      <div> Chargement </div>
       ) : (
         <div>
 
