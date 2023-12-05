@@ -52,6 +52,8 @@ function App() {
   const [userScope, setUserScope] = useState(1);
   const [userPosts, setUserPosts] = useState<postObject>([{userId:1, id:0, title:'', body:''}]);
 
+  const [inputValue, setInputValue] = useState('');
+
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -72,8 +74,6 @@ function App() {
         const response = await fetch('https://jsonplaceholder.typicode.com/users')
         const usersList = await response.json();
         setUsersList(usersList);
-        const userFiltered = usersList.find((user: userObject) => user.id === userScope);
-        console.log(userFiltered);
       } catch (err) {
         console.log('===== error =====', err)
         setError(true)
@@ -119,8 +119,11 @@ function App() {
 
           <section style={{display : postsVisibility ? 'block' : 'none'}}>
             <h2>Tous les Posts</h2>
+            <input onChange= {(event) => setInputValue(event.target.value)} value={inputValue} type="text" id="searchbar" name="searchbar" placeholder='Rechercher un post'/>
             <div>
-            {postsList?.map((post) => (
+            {postsList
+            ?.filter((post) => inputValue ? post.title.toLowerCase().includes(inputValue.toLowerCase()) : true )
+            .map((post) => (
               <Post onClick={() => switchPostsUser('userON', post.userId, postsList)}
               key={post.id} 
               title={post.title} 

@@ -27,6 +27,7 @@ h1{
     text-align: center;
 }
 
+
 h2{
     font-size: 60px;
     color: #fff;
@@ -41,4 +42,12 @@ h2{
     padding: 30px 50px;
     font-size: 20px;
     font-weight: 600;
+}
+
+input {
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    padding: 20px;
 }
