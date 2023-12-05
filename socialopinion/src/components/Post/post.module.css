@@ -10,9 +10,8 @@
     gap: 10%;
 }
 
-
 .post div{
-    width: 65%;
+    width: 100%;
 }
 
 .post h3{
@@ -22,7 +21,7 @@
 .post h4{
     color: #DB3069;
     text-align: center;
-    width: 25%;
+    width: 400px;
 }
 
 .post h4 span {

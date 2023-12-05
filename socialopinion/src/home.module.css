@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #1446A0;
+    background-color: #02394A;
 }
 
 .global{
@@ -50,4 +50,10 @@ input {
     margin-bottom: 100px;
     border-radius: 20px;
     padding: 20px;
+}
+
+.noResult{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
 }

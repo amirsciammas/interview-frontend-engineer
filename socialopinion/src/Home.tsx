@@ -108,6 +108,10 @@ function App() {
     }
   }
 
+  const filteredPosts = postsList?.filter((post) =>
+  inputValue ? post.title.toLowerCase().includes(inputValue.toLowerCase()) : true
+);
+
 
   return (
     <div className={styles.global}>
@@ -118,19 +122,26 @@ function App() {
         <div>
 
           <section style={{display : postsVisibility ? 'block' : 'none'}}>
+
             <h2>Tous les Posts</h2>
             <input onChange= {(event) => setInputValue(event.target.value)} value={inputValue} type="text" id="searchbar" name="searchbar" placeholder='Rechercher un post'/>
+
             <div>
-            {postsList
-            ?.filter((post) => inputValue ? post.title.toLowerCase().includes(inputValue.toLowerCase()) : true )
-            .map((post) => (
-              <Post onClick={() => switchPostsUser('userON', post.userId, postsList)}
-              key={post.id} 
-              title={post.title} 
-              author={usersList?.filter((user) => user.id === post.userId)[0].username} 
-              body={post.body}/>
-            ))}
+              {filteredPosts?.length === 0 ? (
+                <p className={styles.noResult}>Aucun résultat, changez votre recherche.</p>
+                ) : (
+                filteredPosts?.map((post) => (
+                  <Post
+                    onClick={() => switchPostsUser('userON', post.userId, postsList)}
+                    key={post.id}
+                    title={post.title}
+                    author={usersList?.find((user) => user.id === post.userId)?.username || ''}
+                    body={post.body}
+                  />
+                ))
+              )}
             </div>
+
           </section>
 
 
