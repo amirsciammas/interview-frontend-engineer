@@ -2,8 +2,8 @@
     margin-bottom: 50px;
     padding: 50px;
     border-radius: 10px;
-    background-color: #2E294E;
-    color: white;
+    background-color: #fff;
+    color: #222725;
 
     display: flex;
     align-items: center;
@@ -20,12 +20,17 @@
 }
 
 .post h4{
-    color: #FF8E72;
+    color: #DB3069;
     text-align: center;
     width: 10%;
 }
 
 .post h4 span {
     font-size: 50px;
+}
+
+.post p{
+    font-style: italic;
+    margin-top: 20px;
 }
 

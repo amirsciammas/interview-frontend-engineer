@@ -9,19 +9,36 @@
 
 }
 
+body {
+    background-color: #1446A0;
+}
+
 .global{
     width: 90%;
     margin: 0 auto;
 }
 
 h1{
-    color: #2E294E;
+    color: #fff;
     font-size: 100px;
     font-weight: 900;
+    line-height: 90%;
+    margin-top: 30px;
+    text-align: center;
 }
 
 h2{
     font-size: 60px;
-    color: #2E294E;
-    margin: 30px 0;
+    color: #fff;
+    margin: 50px 0 30px 0;
+}
+
+.switchButton{
+    background-color: #fff;
+    border: 5px solid #DB3069;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 30px 50px;
+    font-size: 20px;
+    font-weight: 600;
 }
