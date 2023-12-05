@@ -1,0 +1,31 @@
+.post{
+    margin-bottom: 50px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #2E294E;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+
+.post div{
+    width: 80%;
+}
+
+.post h3{
+    font-size: 40px;
+}
+
+.post h4{
+    color: #FF8E72;
+    text-align: center;
+    width: 10%;
+}
+
+.post h4 span {
+    font-size: 50px;
+}
+
