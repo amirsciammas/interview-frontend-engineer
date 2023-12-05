@@ -12,7 +12,7 @@
 
 
 .post div{
-    width: 80%;
+    width: 65%;
 }
 
 .post h3{
@@ -22,11 +22,11 @@
 .post h4{
     color: #DB3069;
     text-align: center;
-    width: 10%;
+    width: 25%;
 }
 
 .post h4 span {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .post p{

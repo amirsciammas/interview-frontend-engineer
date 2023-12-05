@@ -1,0 +1,23 @@
+.profile {
+    display: flex;
+    align-items: center;
+    margin: 100px 0;
+    color: white;
+    gap: 10%;
+}
+
+.profile h5 {
+    font-size: 100px;
+    font-weight: 800;
+}
+
+.profile h6 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.profile h6 span {
+    font-size: 20px;
+    text-decoration: underline;
+}
+

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import Post from './components/Post';
+import Profile from './components/Profile';
 
 import styles from './home.module.css';
 
@@ -10,18 +11,46 @@ type postObject =
     id: number,
     title: string,
     body: string
-  } []
+  } [];
+
+  type userObject =
+  {
+    id: number,
+    name: string,
+    username: string,
+    email: string,
+    address: {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: {
+        lat: string,
+        lng: string
+      }
+    },
+    phone: string,
+    website: string,
+    company: {
+      name: string,
+      catchPhrase: string,
+      bs: string
+    }
+  };
 
 function App() {
 
   const [isDataLoading, setDataLoading] = useState(true);
-  const [postsList, setPostsList] = useState<postObject>([{userId:0, id:0, title:'', body:''}]);
   const [error, setError] = useState(false);
+
+  const [postsList, setPostsList] = useState<postObject>([{userId:1, id:0, title:'', body:''}]);
+  const [usersList, setUsersList] = useState<userObject[]>();
 
   const [postsVisibility, setPostsVisibility] = useState(true);
   const [userVisibility, setUserVisibility] = useState(false);
+
   const [userScope, setUserScope] = useState(1);
-  const [userPosts, setUserPosts] = useState<postObject>([{userId:0, id:0, title:'', body:''}]);
+  const [userPosts, setUserPosts] = useState<postObject>([{userId:1, id:0, title:'', body:''}]);
 
   useEffect(() => {
     async function fetchPosts() {
@@ -37,8 +66,24 @@ function App() {
         setDataLoading(false)
       }
     }
+
+    async function fetchUsers() {
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const usersList = await response.json();
+        setUsersList(usersList);
+        const userFiltered = usersList.find((user: userObject) => user.id === userScope);
+        console.log(userFiltered);
+      } catch (err) {
+        console.log('===== error =====', err)
+        setError(true)
+      } finally {
+        setDataLoading(false)
+      }
+    }
     
     fetchPosts()
+    fetchUsers()
   }, []);
   
   if (error) {
@@ -79,7 +124,7 @@ function App() {
               <Post onClick={() => switchPostsUser('userON', post.userId, postsList)}
               key={post.id} 
               title={post.title} 
-              author={post.userId} 
+              author={usersList?.filter((user) => user.id === post.userId)[0].username} 
               body={post.body}/>
             ))}
             </div>
@@ -87,17 +132,21 @@ function App() {
 
 
           <section style={{display : userVisibility ? 'block' : 'none'}}>
-            <button className={styles.switchButton} onClick={() => switchPostsUser('postsON', 1, postsList)}>Revenir sur les posts</button>
-            <h2>Profil de l'utilisateur {userScope}</h2>
-            <div>
-            {userPosts?.map((post) => (
-              <Post
-              key={post.id} 
-              title={post.title} 
-              author={post.userId} 
-              body={post.body}/>
-            ))}
-            </div>
+
+              <button className={styles.switchButton} onClick={() => switchPostsUser('postsON', 1, postsList)}>Revenir sur les posts</button>
+
+                <Profile informations={usersList?.find((user) => user.id === userScope)}/>
+
+              <div>
+              {userPosts?.map((post) => (
+                <Post
+                key={post.id} 
+                title={post.title} 
+                author={usersList?.filter((user) => user.id === post.userId)[0].username} 
+                body={post.body}/>
+              ))}
+              </div>
+
           </section>
 
 
