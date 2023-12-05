@@ -28,8 +28,8 @@ function App() {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts')
         const postsList = await response.json();
-        setPostsList(postsList);
-        console.log(postsList[0].title);
+        const shuffledPosts = postsList.sort(() => Math.random() - 0.5);
+        setPostsList(shuffledPosts);
       } catch (err) {
         console.log('===== error =====', err)
         setError(true)
@@ -50,8 +50,11 @@ function App() {
       setPostsVisibility(false)
       setUserVisibility(true)
       setUserScope(newUserScope)
+
       const userPosts = postsList.filter((post) => post.userId === newUserScope)
       setUserPosts(userPosts)
+
+      window.scrollTo(0, 0)
     }
 
     if (param === 'postsON'){
